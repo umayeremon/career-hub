@@ -5,7 +5,7 @@ import Hero from "../Hero/Hero";
 
 const Home = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-4">
     <Hero/>
     <CategoryList/>
     <FeaturedJobs/>
