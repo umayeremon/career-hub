@@ -3,6 +3,9 @@ import { CiDollar, CiPhone } from "react-icons/ci";
 import { MdOutlineMail } from "react-icons/md";
 import { RiKeyboardBoxLine } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { setAppliedJobs } from "../../Utitlity/localStorage";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -18,6 +21,21 @@ const JobDetails = () => {
     job_title,
     contact_information,
   } = job;
+
+  const handleApplyJob=()=>{
+    setAppliedJobs(currentId)
+
+    toast.success('Congratulations! Your application submitted successfully', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+      })
+  }
   return (
     <div className="min-h-[calc(100vh-288px)]">
       <div className="bg-gradient-to-r from-[#9873FF0D] to-[#7E90FE0D] h-36 flex items-center justify-center rounded-xl">
@@ -102,12 +120,13 @@ const JobDetails = () => {
           </div>
           <div>
             <Link>
-              <button className="btn bg-gradient-to-r from-[#9873FFFF] to-[#7E90FE] text-base font-medium text-white w-full">
+              <button onClick={handleApplyJob} className="btn bg-gradient-to-r from-[#9873FFFF] to-[#7E90FE] text-base font-medium text-white w-full">
                 Apply Now
               </button>
             </Link>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </div>
   );
