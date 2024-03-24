@@ -24,17 +24,17 @@ const JobDetails = () => {
 
   const handleApplyJob=()=>{
     setAppliedJobs(currentId)
-
     toast.success('Congratulations! Your application submitted successfully', {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light"
-      })
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+    })
+    
   }
   return (
     <div className="min-h-[calc(100vh-288px)]">
